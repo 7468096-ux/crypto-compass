@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import CryptoTable from '@/components/CryptoTable';
 import PortfolioBuilder from '@/components/PortfolioBuilder';
+import WhatIfSimulator from '@/components/WhatIfSimulator';
 import { CryptoData } from '@/lib/coingecko';
 import { RefreshCw, AlertCircle } from 'lucide-react';
 
@@ -112,6 +113,13 @@ export default function Home() {
         {cryptos.length > 0 && (
           <div className="mt-8">
             <PortfolioBuilder />
+          </div>
+        )}
+
+        {/* What If Simulator */}
+        {cryptos.length > 0 && (
+          <div className="mt-8">
+            <WhatIfSimulator />
           </div>
         )}
 
