@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import CryptoTable from '@/components/CryptoTable';
+import PortfolioBuilder from '@/components/PortfolioBuilder';
 import { CryptoData } from '@/lib/coingecko';
 import { RefreshCw, AlertCircle } from 'lucide-react';
 
@@ -99,6 +100,13 @@ export default function Home() {
         {cryptos.length > 0 && (
           <div className="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
             <CryptoTable cryptos={cryptos} isSimpleMode={isSimpleMode} />
+          </div>
+        )}
+
+        {/* Portfolio Builder */}
+        {cryptos.length > 0 && (
+          <div className="mt-8">
+            <PortfolioBuilder />
           </div>
         )}
 
